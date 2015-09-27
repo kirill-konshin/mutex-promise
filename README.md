@@ -16,7 +16,7 @@ Installation
 $ bower install promise-mutex
 ```
 
-Or download the [raw file](https://github.com/kirill-konshin/promise-mutex/blob/master/index.js).
+Or download the [raw file](https://github.com/kirill-konshin/mutex-promise/blob/master/index.js).
 
 ### NodeJS
 
