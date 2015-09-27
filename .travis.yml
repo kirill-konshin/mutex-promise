@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '0.12'
+- '0.11'
+- iojs
+deploy:
+  provider: npm
+  email: kirill.konshin@gmail.com
+  api_key:
+    secure: ixWaN1Hye7H/d6NsvuiBLK4K8JvlMWZV3AXziRIM2mCu1JZCFcgv6Lca2ujDKmibIS8k0wXNOJZWNskC7w4RYxR54AXIccxw2NekrghqKYbCaArcgngbtOJqO50h8SQHLVdqCdVvkWlsSmngyeKRW5yHgcZ766oNA56950s7VKt+BDbauvlXGhHP708Z3qN2hayB6iMFJjjtfP7p28xkne8uF1YBG9loc7OJl8RRjA6YF+5kBainBA2sLr5r8RvEGDTXIg3Y+JG391RasKtHCn7ftRp2U5z0ZwZ3Rik6M539TsiVrbxO6KI5Z7ggQCrGGrS+EN+/p1Xl3z0ITSku7qnF+6tkbcKbUNFqrKOnlr+kSsCDGif4breHO4ejkFXy+3dlc9Zb1qVuRWQcpzVgNjWs0/VelUb21Fj3MnnYTOWTwZ0gb8Ie9h/glwc1zAVUMFoEt6B0ZXwBRkQjvLQJ+fkoQDZPsInRMvEv/UwDGD1EDdYuQgq/C/CW7a3JtmN2tnBWHBqywC8ErT09v2YsU9j+gmF1PYI8ijSAVuRqCqRcjmgT/yFszx3P1FNvlEA0WpPPcf5IG/pK6oEHf4ULMPPRQHSM8N+xeVMjvR3BQuTqiqrxvftH9zkUU996+nLW+932im/MzchfOdCciqIcTNLNbM8880wGbM1j4egzspU=
+  on:
+    tags: true
+    repo: kirill-konshin/mutex-promise

@@ -1,0 +1,21 @@
+{
+  "name": "mutex-promise",
+  "main": "index.js",
+  "ignore": [
+    "**/*",
+    "!README.md",
+    "!index.js"
+  ],
+  "dependencies": {},
+  "private": false,
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kirill Konshin"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kirill-konshin/mutex-promise.git"
+  }
+}
