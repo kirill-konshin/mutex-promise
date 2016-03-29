@@ -21,7 +21,7 @@ Or download the [raw file](https://github.com/kirill-konshin/mutex-promise/blob/
 ### NodeJS
 
 ```sh
-$ npm install mutex
+$ npm install mutex-promise
 ```
 
 API
