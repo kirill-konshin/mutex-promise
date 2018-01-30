@@ -24,6 +24,21 @@
     };
 
     /**
+     * @name Timeout
+     * @param fn
+     * @param interval
+     * @constructor
+     */
+    function Timeout(fn, interval) {
+        var id = setTimeout(fn, interval);
+        this.cleared = false;
+        this.clear = function() {
+            this.cleared = true;
+            clearTimeout(id);
+        };
+    }
+
+    /**
      * @name MutexPromise
      * @param key
      * @param [options]
@@ -41,6 +56,7 @@
         this._key = key;
         this._interval = options.interval || MutexPromise.interval;
         this._timeout = options.timeout || MutexPromise.timeout;
+        this._timeouts = [];
 
     }
 
@@ -86,6 +102,16 @@
     };
 
     /**
+     * 
+     */
+    MutexPromise.prototype.clear = function() {
+        this._timeouts.forEach(function(timeout) {
+            timeout.clear();
+        });
+        this._timeouts = [];
+    };
+
+    /**
      * @param {function} resolve
      * @param {function} reject
      * @private
@@ -95,7 +121,8 @@
             this.unlock();
             resolve(this);
         }
-        setTimeout(this._poll.bind(this, resolve, reject), this._interval);
+        var timeout = new Timeout(this._poll.bind(this, resolve, reject), this._interval);
+        this._timeouts.push(timeout);
     };
 
     /**
