@@ -125,4 +125,18 @@
 
     });
 
+    describe('clear()', function() {
+
+        it('clears all timeouts', function() {
+            var mutex = createMutex();
+            mutex.clear();
+            expect(mutex['_timeouts'].length).to.equal(0);
+        });
+
+        it('returns true for newly created and locked mutex', function() {
+            expect(createMutex().lock().locked()).to.be.true;
+        });
+
+    });
+
 }));
