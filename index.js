@@ -93,7 +93,7 @@
     MutexPromise.prototype._poll = function(resolve, reject) {
         if (!this.locked()) {
             this.unlock();
-            resolve(this);
+            return resolve(this);
         }
         setTimeout(this._poll.bind(this, resolve, reject), this._interval);
     };
